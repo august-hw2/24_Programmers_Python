@@ -14,18 +14,4 @@ def solution(lines):
     # a, b, c 집합처리
     a, b, c = set(a), set(b), set(c)
 
-    # a, b 교집합
-    ab = a&b
-    # b, c 교집합
-    bc = b&c
-    # c, a 교집합
-    ca = c&a
-
-    # 합집합
-    res = ab|bc|ca
-    res = list(res)
-
-    if len(res) != 0:
-        return len(res)
-    else:
-        return 0
+    return len((a&b)|(b&c)|(c&a))
