@@ -1,7 +1,2 @@
 def solution(n):
-    ans = 0
-
-    for i in list(str(n)):
-        ans += int(i)
-
-    return ans
+    return sum(int(i) for i in str(n))
