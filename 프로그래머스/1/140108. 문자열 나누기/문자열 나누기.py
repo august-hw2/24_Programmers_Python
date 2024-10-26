@@ -1,29 +1,16 @@
 def solution(s):
     
-    arr = list(s) #문자열 -> 리스트로
-    ans_arr = [] #분리된 문자열 저장 리스트
+    ans = 0
+    cnt1, cnt2 = 0, 0
 
-    i = 0
-    x, not_x = "", ""
+    for i in s:
+        if cnt1 == cnt2:
+            ans += 1
+            k = i
 
-    while i < len(arr):
-
-        if x == "":
-            tmp = arr[i]
-        if tmp == arr[i]:
-            x += arr[i]
+        if k == i:
+            cnt1 += 1
         else:
-            not_x += arr[i]
+            cnt2 += 1
 
-        if len(x) == len(not_x):
-            ans_arr.append(x+not_x)
-            x, not_x = "", ""
-
-        i += 1
-
-    if len("".join(ans_arr)) != len(s):
-        ans_arr.append(s.lstrip("".join(ans_arr)))
-    elif s.lstrip("".join(ans_arr)) != "":
-        pass
-
-    return len(ans_arr)
+    return ans
