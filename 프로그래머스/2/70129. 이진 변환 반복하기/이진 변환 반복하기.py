@@ -1,6 +1,5 @@
 def solution(s):
-    ans = [0, 0]
-
+    
     one_to_bin = str(s)
     one_cnt, zero_cnt = 0, 0
     i = 0
@@ -15,6 +14,7 @@ def solution(s):
 
         # one의 길이 -> 이진수로 변환
         one_to_bin = format(len(one), 'b')
+        #one_to_bin = bin(len(one)[2:]
 
         i += 1
 
